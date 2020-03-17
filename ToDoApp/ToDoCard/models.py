@@ -11,3 +11,8 @@ class Task(models.Model):
     due_date = models.DateTimeField()
     is_finished = models.BooleanField()
 
+
+class Subtask(models.Model):
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    is_finished = models.BooleanField()
