@@ -7,13 +7,13 @@ from .serializers import TaskSerializer
 
 
 @api_view(["GET", ])
-def api_detail_task_view(request, slug):
+def api_detail_task_view(request):
     try:
-        task_detail = Task.objects.get(slug=slug)
+        task_detail = Task.objects.all()
     except Task.DoesNotExists:
         return Response(status.HTTP_404_NOT_FOUND)
 
     if request.method == "GET":
-        serializer = TaskSerializer(task_detail)
+        serializer = TaskSerializer(task_detail, many=True)
         return Response(serializer.data)
 
