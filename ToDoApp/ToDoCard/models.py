@@ -16,7 +16,10 @@ class Task(models.Model):
         return self.author
 
 
-class Subtask(models.Model):
-    task = models.ForeignKey(Task, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
-    is_finished = models.BooleanField()
+# class Subtask(models.Model):
+#     name = models.CharField(max_length=200)
+#     task = models.ForeignKey(Task, on_delete=models.CASCADE)
+#     is_finished = models.BooleanField()
+#
+#     def __str__(self):
+#         return self.name

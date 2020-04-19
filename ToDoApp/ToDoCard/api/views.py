@@ -1,9 +1,14 @@
+from django.http import HttpResponse
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from ToDoCard.models import Task
 from .serializers import TaskSerializer
+
+
+def home_page(request):
+    return HttpResponse("Home page")
 
 
 @api_view(["GET", ])

@@ -1,4 +1,5 @@
 db.sqlite3
 ToDoApp/config.py
 .idea
+../.idea
 __pycache__
